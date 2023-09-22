@@ -5,9 +5,15 @@ const todos = [
 ];
 	
 module.exports = {
-    getAll
+    getAll,
+    getOne
 };
 	
 function getAll() {
     return todos;
+}
+
+function getOne(id) {
+    id = parseInt(id)
+    return todos.find(todo => todo.id === id)
 }
