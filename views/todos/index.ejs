@@ -4,6 +4,7 @@
     <% todos.forEach(function(m) { %>
       <div class="list">
         <div class="list-name"><%= m.name %></div>
+        <a href="/todos/<%= m._id %>">DETAILS</a>
       </div>
       <% }); %>
 </body>

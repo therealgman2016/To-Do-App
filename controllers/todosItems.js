@@ -1,8 +1,7 @@
 const Todo = require('../models/todo')
 
 module.exports = {
-    create,
-    new: newItem
+    create
 }
 
 async function create(req, res) {
@@ -15,9 +14,5 @@ async function create(req, res) {
         console.log(err)
     }
 
-    res.redirect(`/todos/${todoItem._id}`)
+    res.redirect(`/todos/${todo._id}`)
 }
-
-function newItem(req, res) {
-        res.render('todos/newItem', { errorMsg: '' })
-    }

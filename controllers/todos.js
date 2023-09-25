@@ -2,22 +2,27 @@ const Todo = require('../models/todo')
 
 module.exports = {
     index,
-    create,
-    new: newTodo
+    show,
+    new: newTodo,
+    create
 }
 
-// BELOW CODE TAKEN OUT TO FIX REFERENCE ERROR
-// async function index(req, res) {
-//     const todos = await Todo.find({});
-//     res.render('todos/index', todos);
-// }
 
 
 async function index(req, res) {
     const todos = await Todo.find({});
     res.render('todos', { title: 'All Lists', todos });
-  }
+}
 
+
+async function show(req, res) {
+    const todo = await Todo.findById(req.params.id)
+    res.render('todos/show', { title: 'List Detail', todo })
+}
+
+function newTodo(req, res) {
+    res.render('todos/newList', { errorMsg: '' })
+}
 
 async function create(req, res) {
     try {
@@ -31,6 +36,3 @@ async function create(req, res) {
     // res.redirect(`/todos/${todoItem._id}`)
 }
 
-function newTodo(req, res) {
-    res.render('todos/newList', { errorMsg: '' })
-}

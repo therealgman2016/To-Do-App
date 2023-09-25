@@ -1,13 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>To-Do</title>
-</head>
-    <body>
-        <h3><%= todo %></h3>
-        <h3>Complete: <%= todo.done ? 'Yes' : 'No' %></h3>
-    </body>
-</html>
+<%- include('../partials/header') %>
+<div>Title: <%= todo.name %></div>
+
+
+<section id="show-page">
+    <div class="item"><%= todo.todoItem %></div>
+</section>
+
+<section class="add-item">
+    <form method="POST" action="/todos/<%= todo._id %>/todoItem">
+        <label>Item:</label>
+        <input type="text" name="item">
+        <label">Completed?</label>
+        <input type="checkbox" name="isDone">
+        <input type="submit">
+    </form>
+
+
+<% if (todo.todoItem.length) { %>
+    <table>
+        <thead>
+            <tr>
+                <th>Item:</th>
+                <th>Completed?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% todo.todoItem.forEach(function(i) { %>
+                <tr>
+                    <td><%= i.item %></td>
+                    <td><%= i.isDone ? 'Yes' : 'No' %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+<% } else { %>
+    <h5>No Items Yet</h5>
+<% } %>
+</section>
+
+
+<%- include('../partials/footer') %>
