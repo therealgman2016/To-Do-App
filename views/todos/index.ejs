@@ -1,13 +1,22 @@
 <%- include('../partials/header') %>
-<body>
-    <h1>Todo List App</h1>
-    <% todos.forEach(function(m) { %>
-      <div class="list">
-        <div class="list-name"><%= m.name %></div>
-        <a href="/todos/<%= m._id %>">DETAILS</a>
-      </div>
-      <% }); %>
-</body>
+
+<h2>ToDo Lists</h2>
+<table>
+  <thead>
+    <tr>
+      <th>List:</th>
+      <th>Details:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% todos.forEach(function(l) { %>
+    <tr>
+      <td><%= l.name %></td>
+      <td><a href="/todos/<%= l._id %>">DETAILS</a></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
 
 
 

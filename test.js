@@ -6,7 +6,7 @@ const Todo = require('./models/todo')
 Todo.create({
     name: 'example',
     todoItem: [
-        {item: 'item1', isDone: true},
-        {item: 'item2', isDone: false}
+        {item: 'item1', isDone: 'yes'},
+        {item: 'item2', isDone: 'no'}
     ]
 })

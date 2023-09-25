@@ -4,6 +4,6 @@ const todosItemsCtrl = require('../controllers/todosItems');
 
 
 
-router.post('/todos/:id/todosItem', todosItemsCtrl.create)
+router.post('/todos/:id/todoItem', todosItemsCtrl.create)
 
 module.exports = router

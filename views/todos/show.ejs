@@ -1,19 +1,18 @@
 <%- include('../partials/header') %>
-<div>Title: <%= todo.name %></div>
-
 
 <section id="show-page">
-    <div class="item"><%= todo.todoItem %></div>
+    <div>Title: <%= todo.name %></div>
 </section>
 
-<section class="add-item">
-    <form method="POST" action="/todos/<%= todo._id %>/todoItem">
-        <label>Item:</label>
-        <input type="text" name="item">
-        <label">Completed?</label>
-        <input type="checkbox" name="isDone">
-        <input type="submit">
-    </form>
+
+<form id="add-item-form" method="POST" 
+    action="/todos/<%= todo._id %>/todoItem">
+    <label>Item:</label>
+    <input type="text" name="item">
+    <label>Completed?</label>
+    <input type="text" name="isDone">
+    <input type="submit">
+</form>
 
 
 <% if (todo.todoItem.length) { %>
@@ -36,7 +35,7 @@
 <% } else { %>
     <h5>No Items Yet</h5>
 <% } %>
-</section>
+
 
 
 <%- include('../partials/footer') %>

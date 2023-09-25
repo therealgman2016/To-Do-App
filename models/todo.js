@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 
 const todoItemSchema = new Schema({
     item: String,
-    isDone: Boolean
+    isDone: String
 })
 
 const todoSchema = new Schema({
