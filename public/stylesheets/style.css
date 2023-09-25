@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+.list-name {
+  font-size: x-large
+}
+
+.list {
+  display: inline-block;
+  background-color: red;
+}

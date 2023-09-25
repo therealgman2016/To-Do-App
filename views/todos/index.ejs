@@ -1,14 +1,12 @@
 <%- include('../partials/header') %>
-<tbody>
+<body>
     <h1>Todo List App</h1>
     <% todos.forEach(function(m) { %>
-      <tr>
-        <td><%= m.name %></td>
-        <td><%= m.owner %></td>
-        <!-- <td><a href="/movies/<%= m._id %>">DETAILS</a></td> -->
-      </tr>
+      <div class="list">
+        <div class="list-name"><%= m.name %></div>
+      </div>
       <% }); %>
-</tbody>
+</body>
 
 
 
