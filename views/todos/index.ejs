@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>To-Do</title>
-</head>
-<body>
-    <h1>Todos</h1>
-    <ul>
-      <% todos.forEach(function(t) { %>
-        <li>
-        <a href="/todos/<%= t.id %>"><%= t.todo %></a>
-          <%= t.todo %>
-            - 
-          <%= t.done ? 'done' : 'not done' %>
-        </li>
+<%- include('../partials/header') %>
+<tbody>
+    <h1>Todo List App</h1>
+    <% todos.forEach(function(m) { %>
+      <tr>
+        <td><%= m.name %></td>
+        <td><%= m.owner %></td>
+        <!-- <td><a href="/movies/<%= m._id %>">DETAILS</a></td> -->
+      </tr>
       <% }); %>
-    </ul>
-  </body>
-</html>
+</tbody>
+
+
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/todos" method="POST">
+  <label>item:</label>
+  <input type="text" name="item">
+  <label>Done:</label>
+  <input type="checkbox" name="isDone" checked>
+  <input type="submit" value="Add item/task">
+</form>
+
+<%- include('../partials/footer') %>

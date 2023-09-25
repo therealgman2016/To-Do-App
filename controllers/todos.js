@@ -1,20 +1,36 @@
-// controllers/todos.js
 const Todo = require('../models/todo')
 
 module.exports = {
     index,
-    show
+    create,
+    new: newTodo
 }
 
+// BELOW CODE TAKEN OUT TO FIX REFERENCE ERROR
+// async function index(req, res) {
+//     const todos = await Todo.find({});
+//     res.render('todos/index', todos);
+// }
 
-function index(req, res) {
-    res.render('todos/index', {
-        todos: Todo.getAll()
-    });
+
+async function index(req, res) {
+    const todos = await Todo.find({});
+    res.render('todos', { title: 'All Lists', todos });
+  }
+
+
+async function create(req, res) {
+    try {
+        await Todo.create(req.body)
+        res.redirect('/todos')
+
+    } catch (err) {
+        console.log(err)
+    }
+
+    // res.redirect(`/todos/${todoItem._id}`)
 }
 
-function show(req, res) {
-    res.render('todos/show', {
-        todo: Todo.getOne(req.params.id)
-    })
+function newTodo(req, res) {
+    res.render('todos/newList', { errorMsg: '' })
 }
