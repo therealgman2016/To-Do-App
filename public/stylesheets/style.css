@@ -15,3 +15,14 @@ a {
   display: inline-block;
   background-color: red;
 }
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+
+.login img {
+  height: 30px;
+}

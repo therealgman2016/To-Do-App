@@ -21,13 +21,21 @@
             <tr>
                 <th>Item:</th>
                 <th>Completed?</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
             <% todo.todoItem.forEach(function(i) { %>
                 <tr>
                     <td><%= i.item %></td>
-                    <td><%= i.isDone ? 'Yes' : 'No' %></td>
+                    <td><%= i.isDone %></td>
+                    <td>
+                        <% if (user?._id.equals(i.user)) { %>
+                            <form action="/todoItem/<%= i._id %>?_method=DELETE" method="POST">
+                                <button type="submit">X</button>
+                            </form>
+                        <% } %>
+                    </td>
                 </tr>
             <% }); %>
         </tbody>
