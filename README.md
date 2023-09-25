@@ -5,7 +5,7 @@ This is a simple to-do app
 # Screenshot
 
 <img src="https://i.imgur.com/HwayoVK.png">
-<img src="https://i.imgur.com/13k6mzw.png">
+<img src="https://i.imgur.com/dgaNMBG.png">
 
 # Technologies Used
 
